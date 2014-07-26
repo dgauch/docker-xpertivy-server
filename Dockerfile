@@ -14,7 +14,7 @@ RUN sudo rm -f XpertIvyServer5.0.12.46079_Linux_x64.zip
 COPY start-xpertivy-server.sh /usr/local/bin/start-xpertivy-server.sh
 RUN chmod +x /usr/local/bin/*.sh
 
-VOLUME /opt/lic
+VOLUME /data
 
 EXPOSE 8081
 
