@@ -27,8 +27,8 @@ If you want to run the service in non-demo mode, you have to provide a postgres 
 
 Start the Xpert.Ivy server container then with a command similar to this (please use the correct path to the license file):
 
-	docker run -d -p 8081:8081 --link xpertivy-server-db:db -v /directory/with/lic:/opt/lic --name xpertivy-server dgauch/xpertivy-server
+	docker run -d -p 8081:8081 --link xpertivy-server-db:db -v /directory/with/lic:/data --name xpertivy-server dgauch/xpertivy-server
 
-After startup, the server is then available under the same links as above.
+After startup, the server is then available under the same links as above. Consider folder sharing as explained in https://github.com/boot2docker/boot2docker#folder-sharing when you're using boot2docker.
 
 Have fun!
