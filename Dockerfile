@@ -16,6 +16,6 @@ RUN chmod +x /usr/local/bin/*.sh
 
 VOLUME /opt/lic
 
-EXPOSE 8080
+EXPOSE 8081
 
 CMD start-xpertivy-server.sh
