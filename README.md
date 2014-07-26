@@ -8,7 +8,7 @@ Usage
 
 To build the docker image, execute the following command in the root folder: 
 
-	docker build -t tutum/glassfish .
+	docker build -t dgauch/xpertivy-server .
 
 But usually you will not create the image yourself as it will automatically generated and made available at https://registry.hub.docker.com/u/dgauch/xpertivy-server .
 
