@@ -29,6 +29,7 @@ Start the Xpert.Ivy server container then with a command similar to this (please
 
 	docker run -d -p 8081:8081 --link xpertivy-server-db:db -v /directory/with/lic:/opt/lic --name xpertivy-server dgauch/xpertivy-server
 
-After startup, the server is then available under the same links as above.
+After startup, the server is then available under the same links as above. To access the server administration application, use username `XpertIvy` with password `XpertIvy` as in demo mode.
+
 
 Have fun!

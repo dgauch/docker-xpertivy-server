@@ -16,7 +16,7 @@ if [ $(find /data -maxdepth 1 -type f -name '*.lic' -not -name ".*" | wc -l) -eq
                 ch.ivyteam.ivy.server.configuration.ServerConfigurationTool --serverProperty WebServer.HTTP.Port=8081;
 
 	jre/bin/java -cp lib/ivy/*:lib/shared/* \
-		ch.ivyteam.ivy.server.configuration.ServerConfigurationTool -createAdmin admin admin;
+		ch.ivyteam.ivy.server.configuration.ServerConfigurationTool -createAdmin XpertIvy XpertIvy;
 fi
 
 bin/XpertIvyServer.sh
