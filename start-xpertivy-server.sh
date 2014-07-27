@@ -7,7 +7,7 @@ if [ $(find /data -maxdepth 1 -type f -name '*.lic' -not -name ".*" | wc -l) -eq
 	find /data -maxdepth 1 -type f -name '*.lic' -not -name ".*" -exec cp {} configuration \;
 
 	jre/bin/java -cp lib/ivy/*:lib/shared/* \
-		ch.ivyteam.ivy.server.configuration.ServerConfigurationTool -configDb org.postgresql.Driver jdbc:postgresql://${DB_PORT_5432_TCP_ADDR}:${DB_PORT_5432_TCP_PORT}/XpertIvySystemDatabase postgres;
+		ch.ivyteam.ivy.server.configuration.ServerConfigurationTool -configDb org.postgresql.Driver $XPERTIVY_SERVER_DB_URL $XPERTIVY_SERVER_DB_USER $XPERTIVY_SERVER_DB_PASS;
 
 	jre/bin/java -cp lib/ivy/*:lib/shared/* \
         	ch.ivyteam.ivy.server.configuration.ServerConfigurationTool -createDb;

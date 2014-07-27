@@ -21,9 +21,16 @@ To run the Xpert.Ivy server in demo mode, just fire this command:
 	
 This will run the container showing the console and finally remove the container (`--rm`) after you stop it with `Ctrl-c`. After startup finished, access the server page at `http://{dockerhost}:8081/ivy`. On a Linux host, that's usually http://127.0.0.1:8081/ivy. Under Mac OS, you usually end up with http://192.168.59.103:8081/ivy.
 
-If you want to run the service in non-demo mode, you have to provide a postgres database as well as a valid license. To run a suitable postgres container, you may execute:
+If you want to run the service in non-demo mode, you have to provide a database for the Xpert.Ivy system database, as well as a valid license. To run a suitable postgres container, you may execute:
 
 	docker run -d -e LC_ALL=C.UTF-8 --name xpertivy-server-db postgres
+
+The default environment is already configured to be used with a postgres database. If you want to use a different database, please configure these environment variables corretly (this is the default configuration used when you do not specify anything): 
+
+	ENV XPERTIVY_SERVER_DB_URL jdbc:postgresql://${DB_PORT_5432_TCP_ADDR}:${DB_PORT_5432_TCP_PORT}/XpertIvySystemDatabase
+	ENV XPERTIVY_SERVER_DB_USER postgres
+	ENV XPERTIVY_SERVER_DB_PASS
+
 
 Start the Xpert.Ivy server container then with a command similar to this (please use the correct path to the license file):
 
