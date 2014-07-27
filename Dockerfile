@@ -14,12 +14,6 @@ RUN sudo rm -f XpertIvyServer5.0.12.46079_Linux_x64.zip
 COPY start-xpertivy-server.sh /usr/local/bin/start-xpertivy-server.sh
 RUN chmod +x /usr/local/bin/*.sh
 
-
-ENV XPERTIVY_SERVER_DB_URL jdbc:postgresql://${DB_PORT_5432_TCP_ADDR}:${DB_PORT_5432_TCP_PORT}/XpertIvySystemDatabase
-ENV XPERTIVY_SERVER_DB_USER postgres
-# ENV XPERTIVY_SERVER_DB_PASS
-
-
 VOLUME /data
 
 EXPOSE 8081

@@ -25,18 +25,19 @@ If you want to run the service in non-demo mode, you have to provide a database 
 
 	docker run -d -e LC_ALL=C.UTF-8 --name xpertivy-server-db postgres
 
-The default environment is already configured to be used with a postgres database. If you want to use a different database, please configure these environment variables corretly (this is the default configuration used when you do not specify anything): 
+The default environment is already configured to be used with a postgres database. If you want to use a different database, please configure these environment variables correctly, e.g. by using the -e switch: 
 
-	ENV XPERTIVY_SERVER_DB_URL jdbc:postgresql://${DB_PORT_5432_TCP_ADDR}:${DB_PORT_5432_TCP_PORT}/XpertIvySystemDatabase
-	ENV XPERTIVY_SERVER_DB_USER postgres
-	ENV XPERTIVY_SERVER_DB_PASS
-
+	-e XPERTIVY_SERVER_DB_URL=jdbc:postgresql://172.17.0.46:5432/XpertIvySystemDatabase
+	-e XPERTIVY_SERVER_DB_USER=postgres
+	-e XPERTIVY_SERVER_DB_PASS=mypass
 
 Start the Xpert.Ivy server container then with a command similar to this (please use the correct path to the license file):
 
 	docker run -d -p 8081:8081 --link xpertivy-server-db:db -v /directory/with/lic:/data --name xpertivy-server dgauch/xpertivy-server
 
-After startup, the server is then available under the same links as above. Consider folder sharing as explained in https://github.com/boot2docker/boot2docker#folder-sharing when you're using boot2docker.
+After startup, the server is then available under the same links as above. Consider folder sharing as explained in https://github.com/boot2docker/boot2docker#folder-sharing when you're using boot2docker:
+
+	docker run -d -p 8081:8081 --link xpertivy-server-db:db --volumes-from my-data --name xpertivy-server dgauch/xpertivy-server
 
 To access the server administration application, use username `XpertIvy` with password `XpertIvy` as in demo mode.
 
