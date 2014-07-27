@@ -34,9 +34,10 @@ The default environment is already configured to be used with a postgres databas
 
 Start the Xpert.Ivy server container then with a command similar to this (please use the correct path to the license file):
 
-	docker run -d -p 8081:8081 --link xpertivy-server-db:db -v /directory/with/lic:/opt/lic --name xpertivy-server dgauch/xpertivy-server
+	docker run -d -p 8081:8081 --link xpertivy-server-db:db -v /directory/with/lic:/data --name xpertivy-server dgauch/xpertivy-server
 
-After startup, the server is then available under the same links as above. To access the server administration application, use username `XpertIvy` with password `XpertIvy` as in demo mode.
+After startup, the server is then available under the same links as above. Consider folder sharing as explained in https://github.com/boot2docker/boot2docker#folder-sharing when you're using boot2docker.
 
+To access the server administration application, use username `XpertIvy` with password `XpertIvy` as in demo mode.
 
 Have fun!
