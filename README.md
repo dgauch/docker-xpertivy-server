@@ -42,3 +42,7 @@ After startup, the server is then available under the same links as above. Consi
 To access the server administration application, use username `XpertIvy` with password `XpertIvy` as in demo mode.
 
 Have fun!
+
+Known Limitations
+-----------------
+* Even though you may select "JsfWorkflowUi" to be installed when creating a new application, it will not work, as the corresponding project is missing in the official Xpert.Ivy server package.
